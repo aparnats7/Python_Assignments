@@ -1,0 +1,43 @@
+def MarvellousConfusionMatrix():
+
+    border = "-" * 50
+
+    actual = [1,1,1,1,0,0,0,0]
+    predicted = [1,1,0,1,0,1,0,0]
+
+    TP = 0
+    TN = 0
+    FP = 0
+    FN = 0
+
+    print(border)
+    print("Actual Values :",actual)
+    print("Predicted Values :",predicted)
+    print(border)
+
+    for i in range(len(actual)):
+
+        if actual[i] == 1 and predicted[i] == 1:
+            TP = TP + 1
+
+        elif actual[i] == 0 and predicted[i] == 0:
+            TN = TN + 1
+
+        elif actual[i] == 0 and predicted[i] == 1:
+            FP = FP + 1
+
+        elif actual[i] == 1 and predicted[i] == 0:
+            FN = FN + 1
+
+    print("True Positive (TP) :",TP)
+    print("True Negative (TN) :",TN)
+    print("False Positive (FP) :",FP)
+    print("False Negative (FN) :",FN)
+
+    print(border)
+
+def main():
+    MarvellousConfusionMatrix()
+
+if __name__ == "__main__":
+    main()
